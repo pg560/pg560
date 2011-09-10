@@ -16,7 +16,7 @@
           <h:outputLabel for="password">Passord:</h:outputLabel> 
           <h:inputSecret id="password" value="#{loginBackingBean.password}"/> 
         </h:panelGrid> 
-        <h:commandButton id="login" value="Loginn" action="#{loginBackingBean.login}" rendered="#{!loginBackingBean.loggedIn}"/> 
+        <h:commandButton id="login" value="Login" action="#{loginBackingBean.login}" rendered="#{!loginBackingBean.loggedIn}"/> 
         <h:commandButton id="logout" value="Logout" action="#{loginBackingBean.logout}" rendered="#{loginBackingBean.loggedIn}"/> 
       </h:form> 
     </ui:define>

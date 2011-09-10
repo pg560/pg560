@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-import no.nith.pg560.domain.Users;
+import no.nith.pg560.domain.User;
 import no.nith.pg560.infrastructure.UserJpaRepository;
 
 import org.junit.Before;
@@ -28,8 +28,8 @@ public class UserServiceBeanTest {
 
     @Test
     public void readUsers() throws Exception {
-        List <Users> users = userServiceBean.getUsers();
-        assertNotNull(users);
+        User user = userServiceBean.getUser("Ola", "Ola");
+        assertNotNull(user);
     }	
 
 }

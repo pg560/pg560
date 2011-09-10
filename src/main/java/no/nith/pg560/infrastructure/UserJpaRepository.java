@@ -1,39 +1,45 @@
 package no.nith.pg560.infrastructure;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import no.nith.pg560.common.CommonRepository;
-import no.nith.pg560.domain.Users;
+import no.nith.pg560.domain.User;
 
-public class UserJpaRepository extends CommonRepository<Users> {
+public class UserJpaRepository extends CommonRepository<User> {
+	private Logger logger = LoggerFactory.getLogger(UserJpaRepository.class);	
 
 	@PersistenceContext
 	private EntityManager em;
 
 	public UserJpaRepository() {
-		super(Users.class);
+		super(User.class);
 	}
 
 	public UserJpaRepository(EntityManager em) {
-		super(Users.class, em);
+		super(User.class, em);
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Users> getUsers() {
-		return getEntityManager().createQuery("select u from Users u")
-				.getResultList();
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<Users> getUsers(String username, String password) {
-		return getEntityManager()
+	public User getUser(String username, String password) {
+		TypedQuery<User> query = getEntityManager()
 				.createQuery(
-						"select u from Users u where u.username=:username and u.password=:password")
-				.setParameter("username", username)
-				.setParameter("password", password).getResultList();
+						"select u from User u where u.username=:username and u.password=:password",
+						User.class);
+		query.setParameter("username", username);
+		query.setParameter("password", password);
+		User user = null;
+		try {
+			user = query.getSingleResult();
+		} catch (NoResultException e) {
+			logger.info("Fikk ingen treff");
+		}
+
+		return user;
 	}
 
 }

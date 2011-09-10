@@ -5,10 +5,10 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import no.nith.pg560.common.CommonRepository;
 import no.nith.pg560.domain.Users;
-import no.nith.pg560.felles.MagRepository;
 
-public class UserJpaRepository extends MagRepository<Users> {
+public class UserJpaRepository extends CommonRepository<Users> {
 
 	@PersistenceContext
 	private EntityManager em;

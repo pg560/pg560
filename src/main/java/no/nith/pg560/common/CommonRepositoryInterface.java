@@ -1,11 +1,11 @@
-package no.nith.pg560.felles;
+package no.nith.pg560.common;
 
 /**
  * Generisk grensesnitt for dataaksess.
  * 
  * @param <T> Entitetstype i domenemodellen
  */
-public interface MagRepositoryInterface<T> {
+public interface CommonRepositoryInterface<T> {
     T lagre(T objekt);
 
     void opprett(T objekt);

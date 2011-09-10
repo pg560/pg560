@@ -11,6 +11,9 @@ import org.slf4j.LoggerFactory;
 import no.nith.pg560.common.CommonRepository;
 import no.nith.pg560.domain.User;
 
+/**
+ * Repository class handling integration with the PG560_User database. 
+ */
 public class UserJpaRepository extends CommonRepository<User> {
 	private Logger logger = LoggerFactory.getLogger(UserJpaRepository.class);	
 

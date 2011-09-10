@@ -8,6 +8,7 @@
 	<name>pg560-interfaces-web</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<description>pg560-interfaces-web</description>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.java>1.6</version.java>
@@ -51,24 +52,19 @@
 			<artifactId>derbyclient</artifactId>
 			<version>10.8.1.2</version>
 		</dependency>
+<!-- 		
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>maven-embedded-glassfish-plugin</artifactId>
 			<version>3.1</version>
 		</dependency>
+-->		
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
-<!-- 		
-		<dependency>
-			<groupId>javax.transaction</groupId>
-			<artifactId>jta</artifactId>
-			<version>1</version>
-		</dependency>
--->		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>

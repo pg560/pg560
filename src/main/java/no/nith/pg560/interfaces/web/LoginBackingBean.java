@@ -16,6 +16,9 @@ import no.nith.pg560.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * This backingbean handles logon/logout. 
+ */
 @Named
 @SessionScoped
 public class LoginBackingBean implements Serializable {

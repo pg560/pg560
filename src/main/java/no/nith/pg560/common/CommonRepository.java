@@ -3,6 +3,9 @@ package no.nith.pg560.common;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+/**
+ * Common class to be used in repository classes. Helps handling the PersistenceContext and the EntityManager. 
+ */
 public class CommonRepository<T> {
     @PersistenceContext(unitName = "pg560")
     private EntityManager entityManager;

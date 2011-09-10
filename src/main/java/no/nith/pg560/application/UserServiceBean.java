@@ -1,13 +1,14 @@
 package no.nith.pg560.application;
 
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import no.nith.pg560.domain.User;
 import no.nith.pg560.infrastructure.UserJpaRepository;
 
+/**
+ * UserServiceBean exposes functionality for checking if a user exist in the database. 
+ */
 @Stateless
 public class UserServiceBean {
 	@Inject

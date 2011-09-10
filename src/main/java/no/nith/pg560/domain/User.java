@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Domain object exposing the PG560_USER database. 
+ */
 @Entity
 @Table(name = "PG560_USER")
 public class User {

@@ -8,6 +8,9 @@ import javax.persistence.Persistence;
 import org.junit.After;
 import org.junit.Before;
 
+/**
+ * Common class to make it easier to implement integration tests. 
+ */
 public class CommonInfrastructureIT {
 
     private EntityManager entityManager;

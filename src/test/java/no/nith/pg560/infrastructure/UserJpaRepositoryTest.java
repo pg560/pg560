@@ -2,8 +2,8 @@ package no.nith.pg560.infrastructure;
 
 import java.util.List;
 
+import no.nith.pg560.common.CommonInfrastructureIT;
 import no.nith.pg560.domain.Users;
-import no.nith.pg560.felles.EntityIT;
 import no.nith.pg560.infrastructure.UserJpaRepository;
 
 import org.junit.Test;
@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class UserJpaRepositoryTest extends EntityIT {
+public class UserJpaRepositoryTest extends CommonInfrastructureIT {
 
     @Test
     public void readUsers() {

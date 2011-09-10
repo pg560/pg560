@@ -11,12 +11,12 @@
       <h:messages/>
       <h:form id="loginForm"> 
         <h:panelGrid columns="2" rendered="#{!loginBackingBean.loggedIn}"> 
-          <h:outputLabel for="username">Username:</h:outputLabel> 
+          <h:outputLabel for="username">Brukernavn:</h:outputLabel> 
           <h:inputText id="username" value="#{loginBackingBean.username}"/> 
-          <h:outputLabel for="password">Password:</h:outputLabel> 
+          <h:outputLabel for="password">Passord:</h:outputLabel> 
           <h:inputSecret id="password" value="#{loginBackingBean.password}"/> 
         </h:panelGrid> 
-        <h:commandButton id="login" value="Login" action="#{loginBackingBean.login}" rendered="#{!loginBackingBean.loggedIn}"/> 
+        <h:commandButton id="login" value="Loginn" action="#{loginBackingBean.login}" rendered="#{!loginBackingBean.loggedIn}"/> 
         <h:commandButton id="logout" value="Logout" action="#{loginBackingBean.logout}" rendered="#{loginBackingBean.loggedIn}"/> 
       </h:form> 
     </ui:define>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	
+	<h:head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	  <title>PG560 Applikasjon</title>
+	  <link href="stylesheet/main.css" rel="stylesheet" type="text/css"/>
+	</h:head>
+	
+	<body >
+	  <div id="container">
+	    <div id="header">
+	    </div>
+	
+	    <div id="sidebar">
+	    </div>
+	  
+	  	<h:panelGrid id="mainPanel" columns="1">
+		  	<div id="common">
+	  			<h:panelGroup>
+	  				<h:panelGrid columns="1" styleClass="linkPanel">
+				      	<h:outputLabel styleClass="topHeader">PG560 Applikasjon</h:outputLabel>
+				      	<h:panelGrid id="linkPanel" columns="14">
+					      	<h:link value="Home" outcome="home.xhtml" styleClass="link"/>
+					      	 |
+					      	 <h:link value="Søkeside" outcome="home.xhtml" styleClass="link"/>
+					      	 |
+							<h:link value="Med mer.." outcome="home.xhtml" styleClass="link"/>
+					      	 |  					      	   
+				      	</h:panelGrid>
+			      	</h:panelGrid>
+		      	</h:panelGroup>
+		    </div>
+	    
+		    <div id="content">
+		      <ui:insert name="content"/>
+		    </div>
+		    
+	    </h:panelGrid>
+	    
+	    <br style="clear:both"/>
+	    <div>&copy; NITH 2011</div>
+	  </div>
+	   
+	</body>
+</html>

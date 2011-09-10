@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+  <ui:composition template="layout/template.xhtml">
+    <ui:define name="content">
+      <h:messages/>
+      <h:form id="loginForm"> 
+        <h:panelGrid columns="2" rendered="#{!loginBackingBean.loggedIn}"> 
+          <h:outputLabel for="username">Username:</h:outputLabel> 
+          <h:inputText id="username" value="#{loginBackingBean.username}"/> 
+          <h:outputLabel for="password">Password:</h:outputLabel> 
+          <h:inputSecret id="password" value="#{loginBackingBean.password}"/> 
+        </h:panelGrid> 
+        <h:commandButton id="login" value="Login" action="#{loginBackingBean.login}" rendered="#{!loginBackingBean.loggedIn}"/> 
+        <h:commandButton id="logout" value="Logout" action="#{loginBackingBean.logout}" rendered="#{loginBackingBean.loggedIn}"/> 
+      </h:form> 
+    </ui:define>
+  </ui:composition>
+</html>

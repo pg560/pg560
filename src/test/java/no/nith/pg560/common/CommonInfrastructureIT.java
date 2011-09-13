@@ -18,7 +18,7 @@ public class CommonInfrastructureIT {
 
     @Before
     public void setUp() {
-        entityManager = createEntityManager("pg560");
+        entityManager = createEntityManager("pg560-test");
         tr = entityManager.getTransaction();
         tr.begin();
     }

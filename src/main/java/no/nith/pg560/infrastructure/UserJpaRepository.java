@@ -5,8 +5,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger; 
 
 import no.nith.pg560.common.CommonRepository;
 import no.nith.pg560.domain.User;
@@ -15,7 +14,8 @@ import no.nith.pg560.domain.User;
  * Repository class handling integration with the PG560_User database. 
  */
 public class UserJpaRepository extends CommonRepository<User> {
-	private Logger logger = LoggerFactory.getLogger(UserJpaRepository.class);	
+	private Logger logger = Logger.getLogger(UserJpaRepository.class); 
+
 
 	@PersistenceContext
 	private EntityManager em;

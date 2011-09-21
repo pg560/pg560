@@ -13,8 +13,7 @@ import no.nith.pg560.application.UserServiceBean;
 import no.nith.pg560.common.Pg560PageNavigation;
 import no.nith.pg560.domain.User;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger; 
 
 /**
  * This backingbean handles logon/logout. 
@@ -23,7 +22,7 @@ import org.slf4j.LoggerFactory;
 @SessionScoped
 public class LoginBackingBean implements Serializable {
 	private static final long serialVersionUID = 7965455427888195913L;
-	private Logger logger = LoggerFactory.getLogger(LoginBackingBean.class);
+	private Logger logger = Logger.getLogger(LoginBackingBean.class);
 
 	private String username;
 	private String password;
@@ -37,7 +36,7 @@ public class LoginBackingBean implements Serializable {
 		try {
 			currentUser = userService.getUser(getUsername(), getPassword());
 			if (currentUser == null) {
-				logger.info("No users found, returning to login page");
+				logger.info("No users found, returning to login page" + username);
 				FacesContext.getCurrentInstance().addMessage(null,	new FacesMessage("Feil ved paalogging")); 				
 				return Pg560PageNavigation.LOGIN_PAGE;
 			}

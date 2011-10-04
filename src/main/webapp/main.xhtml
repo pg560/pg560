@@ -8,20 +8,31 @@
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
 
-  <ui:composition template="layout/template.xhtml">
-	<ui:define name ="main">
+<ui:composition template="layout/template.xhtml">
+	<ui:define name="main">
 		<h1>Hovedside</h1>
 	</ui:define>
 
 	<ui:define name="content">
-		<h:messages globalOnly="true" errorStyle="color: red" infoStyle="color: red" layout="table"/>
+		<h:messages globalOnly="true" errorStyle="color: red"
+			infoStyle="color: red" layout="table" />
 
-		<div style="font-size:16px; width:600px">
-		<h:form id="mainForm"> 
-			Dette er  hovedsiden...<br></br><br></br><br></br>
-            <h:commandButton id="logout" value="Logout" action="#{loginBackingBean.logout}" rendered="#{loginBackingBean.loggedIn}"/>
-            </h:form>  			
-		</div>	
+		<div style="font-size: 16px; width: 600px">
+			<h:form id="mainForm">
+
+				<rich:panel header="Richfaces panel">
+					<ul>
+						<li>Richfaces panel, kun for test</li>
+					</ul>
+				</rich:panel> 
+	
+				<br></br>
+				<br></br>
+				<h:commandButton id="logout" value="Logout"
+					action="#{loginBackingBean.logout}"
+					rendered="#{loginBackingBean.loggedIn}" />
+			</h:form>
+		</div>
 	</ui:define>
 </ui:composition>
 </html>

@@ -1,29 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich">
-
-<ui:composition template="layout/template.xhtml">
-	<ui:define name="content">
-		<h:messages />
-		<h:form id="loginForm">
-			<h:panelGrid columns="2" rendered="#{!loginBackingBean.loggedIn}">
-				<h:outputLabel for="username">Brukernavn:</h:outputLabel>
-				<h:inputText id="username" value="#{loginBackingBean.username}" />
-				<h:outputLabel for="password">Passord:</h:outputLabel>
-				<h:inputSecret id="password" value="#{loginBackingBean.password}" />
-			</h:panelGrid>
-			<h:commandButton id="login" value="Login"
-				action="#{loginBackingBean.login}"
-				rendered="#{!loginBackingBean.loggedIn}" />
-			<h:commandButton id="logout" value="Logout"
-				action="#{loginBackingBean.logout}"
-				rendered="#{loginBackingBean.loggedIn}" />
-		</h:form>
-	</ui:define>
-
-</ui:composition>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Login Form</title>
+</head>
+<body>
+	<h2>Hei, logg deg inn i applikasjonen:</h2>
+	<form name="loginForm" method="post" action="j_security_check">
+		<p>
+			<strong><label for="username">Brukernavn: </label>
+			</strong> <input id="username" type="text" name="j_username" size="25" />
+		</p>
+		<p>
+			<strong><label for="password">Passord: </label>
+			</strong> <input id="password" type="password" size="15" name="j_password" />
+		</p>
+		<p>
+			<input type="submit" value="Submit" /> <input type="reset"
+				value="Reset" />
+		</p>
+	</form>
+</body>
 </html>

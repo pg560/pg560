@@ -19,11 +19,10 @@ public class User {
 
 	@Column(unique = true)
 	private String username;
-	private String password;
-
-	public User() {
-	}
-
+	private String name;
+	private String city;
+	private String country;	
+	
 	public String getUsername() {
 		return username;
 	}
@@ -32,12 +31,31 @@ public class User {
 		this.username = username;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public String getName() {
+		return name;
 	}
 
-	public String getPassword() {
-		return password;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public User() {
 	}
 
 	public long getId() {

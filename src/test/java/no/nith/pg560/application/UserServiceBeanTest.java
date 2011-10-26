@@ -27,15 +27,14 @@ public class UserServiceBeanTest {
 
     @Test
     public void readUsers() throws Exception {
-    	when(userJpaRepository.getUser("Ola", "Ola")).thenReturn(buildUser());
-        User user = userServiceBean.getUser("Ola", "Ola");
+    	when(userJpaRepository.getUser("Ola")).thenReturn(buildUser());
+        User user = userServiceBean.getUser("Ola");
         assertNotNull(user);
     }	
     
     private User buildUser() {
     	User user = new User();
     	user.setUsername("Ola");
-    	user.setPassword("Ola");
     	return user;
     }
 

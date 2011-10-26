@@ -13,11 +13,12 @@ public class UserJpaRepositoryTest extends CommonInfrastructureIT {
 	@Test
 	public void testGetUser() {
 		UserJpaRepository userRepo = new UserJpaRepository(getEntityManager());
-		User userResult = userRepo.getUser("Ola", "Ola");
-		assertEquals(userResult.getUsername(), "Ola");
-		assertEquals(userResult.getPassword(), "Ola");
+		User userResult = userRepo.getUser("tonnyg");
+		assertEquals(userResult.getName(), "Tonny Gundersen");
+		assertEquals(userResult.getCity(), "Oslo");
+		assertEquals(userResult.getCountry(), "Norway");
 
-		userResult = userRepo.getUser("Finnes ikke", "Finnes ikke");
+		userResult = userRepo.getUser("Finnes ikke");
 		assertNull(userResult);
 	}
 

@@ -28,13 +28,13 @@ public class UserJpaRepository extends CommonRepository<User> {
 		super(User.class, em);
 	}
 
-	public User getUser(String username, String password) {
+	public User getUser(String username) {
 		TypedQuery<User> query = getEntityManager()
 				.createQuery(
-						"select u from User u where u.username=:username and u.password=:password",
+						"select u from User u where u.username=:username",
 						User.class);
 		query.setParameter("username", username);
-		query.setParameter("password", password);
+		
 		User user = null;
 		try {
 			user = query.getSingleResult();
